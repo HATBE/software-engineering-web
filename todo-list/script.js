@@ -37,6 +37,7 @@ function renderTodos() {
   todoListEl.innerHTML = "";
   todos.forEach((todo) => {
     const newTodoEl = document.createElement("li");
+
     const newTodoTextEl = document.createElement("p");
     newTodoTextEl.textContent = `${todo.name}: ${todo.todoText}`;
 
@@ -46,11 +47,12 @@ function renderTodos() {
     xBtn.id = todo.id;
 
     xBtn.addEventListener("click", () => {
-      // Convert xBtn.id to a number for comparison
       todos = todos.filter((obj) => obj.id !== Number(xBtn.id));
-      renderTodos(); // Re-render the todo list after deletion
+      renderTodos();
     });
+
     xBtn.textContent = "X";
+
     newTodoEl.appendChild(xBtn);
 
     todoListEl.appendChild(newTodoEl);
