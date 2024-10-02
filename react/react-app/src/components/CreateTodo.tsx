@@ -16,7 +16,6 @@ export default function CreateTodo(prop: CreateTodoProps) {
     text: "",
   });
 
-  // Handle input changes
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
     setFormData({
@@ -27,12 +26,10 @@ export default function CreateTodo(prop: CreateTodoProps) {
 
   // Handle form submission
   function onClickSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault(); // Prevent page reload
+    event.preventDefault();
 
-    // Propagate the form data to the parent component via addTodo
     prop.addTodo({ name: formData.name, text: formData.text, id: null });
 
-    // Optionally clear the form after submission
     setFormData({
       name: "",
       text: "",
@@ -48,7 +45,7 @@ export default function CreateTodo(prop: CreateTodoProps) {
             name="name"
             type="text"
             value={formData.name}
-            onChange={handleChange} // Attach the change handler to the input
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -57,7 +54,7 @@ export default function CreateTodo(prop: CreateTodoProps) {
             name="text"
             type="text"
             value={formData.text}
-            onChange={handleChange} // Attach the change handler to the input
+            onChange={handleChange}
           />
         </div>
         <button type="submit">Submit</button>
