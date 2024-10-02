@@ -21,13 +21,14 @@ ul {
 
 ul li {
   background-color: grey;
-  padding: 10px;
   margin-top: 10px;
   display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
 }
 
 ul li button {
-  margin-left: 20px;
+  border-radius: 0 10px 10px 0;
 }
 
 form button {

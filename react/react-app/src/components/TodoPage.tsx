@@ -22,8 +22,10 @@ export default function TodoPage() {
     <>
       <h1>TODO Liste</h1>
       <p>Dies ist eine TODO Liste. Trage Name und Tätigkeit ein.</p>
+
       <CreateTodo addTodo={addTodo} />
-      <TodoList todos={todos} removeTodo={removeTodo} />
+
+      {todos.length > 0 && <TodoList todos={todos} removeTodo={removeTodo} />}
     </>
   );
 }
