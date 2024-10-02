@@ -11,11 +11,11 @@ export default function TodoItem(prop: TodoItemProp) {
   }
 
   return (
-    <li id={String(prop.todo.id)}>
+    <>
       <p>
         {prop.todo.name}: {prop.todo.text}
       </p>
       <button onClick={deleteTodo}>X</button>
-    </li>
+    </>
   );
 }

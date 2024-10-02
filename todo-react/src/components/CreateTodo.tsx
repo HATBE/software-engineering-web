@@ -28,6 +28,10 @@ export default function CreateTodo(prop: CreateTodoProps) {
   function onClickSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    if (formData.name === "" || formData.text === "") {
+      return;
+    }
+
     prop.addTodo({ name: formData.name, text: formData.text, id: null });
 
     setFormData({

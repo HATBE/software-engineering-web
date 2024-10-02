@@ -16,7 +16,9 @@ export default function TodoList(prop: TodoListProps) {
       </div>
       <ul>
         {prop.todos.map((todo) => (
-          <TodoItem todo={todo} removeTodo={prop.removeTodo} />
+          <li key={todo.id}>
+            <TodoItem todo={todo} removeTodo={prop.removeTodo} />
+          </li>
         ))}
       </ul>
     </>
