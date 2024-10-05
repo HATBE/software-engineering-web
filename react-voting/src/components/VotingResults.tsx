@@ -12,13 +12,13 @@ export default function VotingResults({ votings }: VotingResultsProps) {
       <p>Abgegebene Stimmen: {totalVotes}</p>
       <table>
         <tbody>
-          {votings.map((voting, idx) => {
+          {votings.map((voting) => {
             let percentage = 0;
             if (totalVotes > 0) {
               percentage = (voting.count / totalVotes) * 100;
             }
             return (
-              <tr key={idx}>
+              <tr key={voting.id}>
                 <th style={{ color: voting.style }}>{voting.color}</th>
                 <td>
                   ({percentage.toFixed(0)}%) {voting.count} stimmen
