@@ -1,11 +1,11 @@
 type VotingButtonProps = {
   color: string;
-  onClick: () => void;
+  onVote: () => void;
 };
 
-export default function VotingButton({ color, onClick }: VotingButtonProps) {
+export default function VotingButton({ color, onVote }: VotingButtonProps) {
   return (
-    <button onClick={onClick} className={color + " vote-btn"}>
+    <button onClick={onVote} className={color + " vote-btn"}>
       {color}
     </button>
   );

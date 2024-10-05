@@ -1,15 +1,20 @@
+import { VotingType } from "../types/VotingType";
 import VotingButton from "./VotingButton";
 
 type VotingButtonsProps = {
-  colors: string[];
+  votings: VotingType[];
   onVote: (index: number) => void;
 };
 
-export default function VotingButtons({ colors, onVote }: VotingButtonsProps) {
+export default function VotingButtons({ votings, onVote }: VotingButtonsProps) {
   return (
     <div className="voting-btns">
-      {colors.map((color, idx) => (
-        <VotingButton key={idx} color={color} onClick={() => onVote(idx)} />
+      {votings.map((voting, idx) => (
+        <VotingButton
+          key={idx}
+          color={voting.color}
+          onVote={() => onVote(idx)}
+        />
       ))}
     </div>
   );

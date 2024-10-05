@@ -1,15 +1,36 @@
 import { useState } from "react";
 import VotingButtons from "../components/VotingButtons";
 import VotingResults from "../components/VotingResults";
+import { VotingType } from "../types/VotingType";
 
 export default function VotingPage() {
-  const colors = ["Blau", "Rot", "Grün", "Gelb"];
+  const initialVotings: VotingType[] = [
+    {
+      color: "Blau",
+      count: 0,
+    },
+    {
+      color: "Rot",
+      count: 0,
+    },
+    {
+      color: "Grün",
+      count: 0,
+    },
+    {
+      color: "Gelb",
+      count: 0,
+    },
+  ];
 
-  const [votes, setVotes] = useState([0, 0, 0, 0]);
+  const [votes, setVotes] = useState(initialVotings);
 
   const handleVote = (index: number) => {
     const newVotes = [...votes];
-    newVotes[index] += 1;
+    newVotes[index] = {
+      ...newVotes[index],
+      count: newVotes[index].count + 1,
+    };
     setVotes(newVotes);
   };
 
@@ -17,9 +38,9 @@ export default function VotingPage() {
     <main>
       <div className="card">
         <h2>Stimme für deine lieblingsfarbe</h2>
-        <VotingButtons colors={colors} onVote={handleVote} />
+        <VotingButtons votings={votes} onVote={handleVote} />
         <hr />
-        <VotingResults votes={votes} colors={colors} />
+        <VotingResults votings={votes} />
       </div>
     </main>
   );

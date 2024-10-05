@@ -1,32 +1,32 @@
+import { VotingType } from "../types/VotingType";
+
 type VotingResultsProps = {
-  votes: number[];
-  colors: string[];
+  votings: VotingType[];
 };
 
-export default function VotingResults({ votes, colors }: VotingResultsProps) {
-  let totalVotes = 0;
-  votes.forEach((vote) => {
-    totalVotes = totalVotes + vote;
-  });
+export default function VotingResults({ votings }: VotingResultsProps) {
+  const totalVotes = votings.reduce((total, vote) => total + vote.count, 0);
 
   return (
     <div>
       <p>Abgegebene Stimmen: {totalVotes}</p>
       <table>
-        {colors.map((color, idx) => {
-          let percentage = 0;
-          if (totalVotes > 0) {
-            percentage = (votes[idx] / totalVotes) * 100;
-          }
-          return (
-            <tr key={idx}>
-              <th>{color}</th>
-              <td>
-                ({percentage.toFixed(0)}%) {votes[idx]} stimmen
-              </td>
-            </tr>
-          );
-        })}
+        <tbody>
+          {votings.map((voting, idx) => {
+            let percentage = 0;
+            if (totalVotes > 0) {
+              percentage = (voting.count / totalVotes) * 100;
+            }
+            return (
+              <tr key={idx}>
+                <th>{voting.color}</th>
+                <td>
+                  ({percentage.toFixed(0)}%) {voting.count} stimmen
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
