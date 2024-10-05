@@ -19,7 +19,7 @@ export default function VotingResults({ votings }: VotingResultsProps) {
             }
             return (
               <tr key={idx}>
-                <th>{voting.color}</th>
+                <th style={{ color: voting.style }}>{voting.color}</th>
                 <td>
                   ({percentage.toFixed(0)}%) {voting.count} stimmen
                 </td>

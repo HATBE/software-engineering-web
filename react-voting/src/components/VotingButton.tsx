@@ -5,7 +5,11 @@ type VotingButtonProps = {
 
 export default function VotingButton({ color, onVote }: VotingButtonProps) {
   return (
-    <button onClick={onVote} className={color + " vote-btn"}>
+    <button
+      onClick={onVote}
+      style={{ borderColor: color }}
+      className={" vote-btn"}
+    >
       {color}
     </button>
   );

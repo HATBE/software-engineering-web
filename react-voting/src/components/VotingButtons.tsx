@@ -12,7 +12,7 @@ export default function VotingButtons({ votings, onVote }: VotingButtonsProps) {
       {votings.map((voting, idx) => (
         <VotingButton
           key={idx}
-          color={voting.color}
+          color={voting.style}
           onVote={() => onVote(idx)}
         />
       ))}

@@ -49,22 +49,6 @@ h2 {
   background-color: aliceblue;
 }
 
-.vote-btn.Blau {
-  border-color: blue;
-}
-
-.vote-btn.Rot {
-  border-color: red;
-}
-
-.vote-btn.Grün {
-  border-color: green;
-}
-
-.vote-btn.Gelb {
-  border-color: yellow;
-}
-
 .vote-btn:hover {
   background-color: black;
   color: white;

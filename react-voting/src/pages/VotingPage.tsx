@@ -7,18 +7,22 @@ export default function VotingPage() {
   const initialVotings: VotingType[] = [
     {
       color: "Blau",
+      style: "blue",
       count: 0,
     },
     {
       color: "Rot",
+      style: "red",
       count: 0,
     },
     {
       color: "Grün",
+      style: "green",
       count: 0,
     },
     {
       color: "Gelb",
+      style: "yellow",
       count: 0,
     },
   ];
