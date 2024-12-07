@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header ul {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
+  background-color: gray;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+header ul li a {
+  text-decoration: none;
+}
+
+input {
+  padding: 5px;
+  margin: 5px;
+}
+
+form input[type="submit"] {
+  padding: 5px 10px;
+  background-color: gray;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.todo-item {
+  background-color: lightblue;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  background-color: darkgray;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.todo-item button.delete {
+  background-color: red;
+}
+
+.todo-item button.see {
+  background-color: blue;
+}
+
+label {
+  display: block;
+}

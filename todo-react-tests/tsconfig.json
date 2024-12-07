@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx", // Use "react" for older React versions (<17)
+    "module": "ESNext", // Optional, ensures ES module syntax
+    "target": "ES6",    // Ensures compatibility with modern JavaScript
+    "moduleResolution": "node", // Properly resolves modules
+    "strict": true, // Optional, enables strict type checking
+    "esModuleInterop": true, // Allows interop with CommonJS modules
+    "allowSyntheticDefaultImports": true // Simplifies imports
+  }
+}
