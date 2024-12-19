@@ -42,8 +42,9 @@ export default function CreateTodoPage() {
         <h1>Todo Erstellen</h1>
         <hr />
         <div>
-          <label>Name:</label>
+          <label htmlFor="name-input">Name:</label>
           <input
+            id="name-input"
             name="name"
             type="text"
             value={formData.name}
@@ -51,8 +52,9 @@ export default function CreateTodoPage() {
           />
         </div>
         <div>
-          <label>Todo:</label>
+          <label htmlFor="todo-input">Todo:</label>
           <input
+            id="todo-input"
             name="text"
             type="text"
             value={formData.text}
